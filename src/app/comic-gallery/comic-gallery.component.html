@@ -1,0 +1,13 @@
+<div class="gallery">
+    <mat-card *ngFor="let comic of comics">
+        <mat-card-header>
+            <mat-card-title>{{comic.title}}</mat-card-title>
+        </mat-card-header>
+        <img class="clickable-image" mat-card-xl-image mat-card-image
+            [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" alt="Photo of a Marvel comic">
+        <mat-card-footer>
+            {{comic.description}}
+        </mat-card-footer>
+    </mat-card>
+    <button mat-raised-button color="primary" (click)="loadComics(offset)">Load More Comics</button>
+</div>
